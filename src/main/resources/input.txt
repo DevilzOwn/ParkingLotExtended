@@ -1,0 +1,10 @@
+add_parking_lot(“PVR Koramangala”, “[2 Car Parkings, 1 Bike Parking, 1 Bicycle Parking]”, “4 Entry Gates”, “2 Exit Gates”)
+is_available(“PVR Koramangala”, “Bike”) -> True (queried from Entry Gate 1)
+is_available(“PVR Koramangala”, “Car”) -> True
+is_available(“PVR Koramangala”, “Bike”) -> True (queried from Entry Gate 2)
+park_vehicle(“PVR Koramangala”, “Car”, “Entry Gate 1”) -> True
+park_vehicle(“PVR Koramangala”, “Bike”, “Entry Gate 2”) -> True
+park_vehicle(“PVR Koramangala”, “Bike”, “Entry Gate 1”) -> False (This will fail because the spot
+was taken in the previous step)
+is_available(“PVR Koramangala”, “Bike”) -> False
+print_all_available_slots(“PVR Koramangala”)
